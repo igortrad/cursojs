@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        h1 {
+            padding: 10px;
+        }
+
+        .origem, .morada{
+            font: bold 15px arial;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        .text, .texto {
+            width: 16em;
+            height: 2em;
+        }
+        .botao {
+            width: 6em;
+            height: 2.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vamos descobrir sua nacionalidade</h1>
+    <div class="origem">
+        <p>Em que pais você nasceu?</p>
+        <input type="text" id="text">
+    </div>
+    <div class="morada">
+        <p>Em que pais você mora atualmente?</p>
+        <input type="text" id="texto">
+        <input type="button" value="Verificar" onclick="clicar()" class="botao">
+    </div>
+    <div id="res">
+
+    </div>
+    <script>
+        function clicar() {
+            var origem = document.getElementById('text')
+            var morada = document.getElementById('texto')
+            var res = document.getElementById ('res')
+            var origem1 = (origem.value)
+            var morada1 = (morada.value)
+            res.innerHTML = `Você nasceu no  ${origem1} e mora em ${morada1} portando. `
+            if (origem !== morada) {
+                res.innerHTML += (`Você não é estrangeiro!!`)
+            } else {
+                res.innerHTML += (`Você é estrangeiro!`)
+            }
+        }
+    </script>
+</body>
+</html>
